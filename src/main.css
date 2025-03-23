@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root{
+    --primary-blue: #3f69bd;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', 'Arial';
+}

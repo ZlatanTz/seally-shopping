@@ -1,0 +1,25 @@
+.header {
+    background-color: var(--primary-blue);
+    display: flex;
+    position: sticky;
+    top: 0;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 50px;
+}
+
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 5px;
+
+}
+
+
+.header img {
+    width: 50px;
+}
