@@ -2,19 +2,33 @@ import { Link } from "react-router";
 
 import styles from "../styles/Header.module.css"; 
 
+import { useState, useEffect } from "react";
+
 const Header = () => {
+    const [isScrolled, setIsScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => setIsScrolled(window.scrollY > 50)
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
             <div className={styles.logoContainer}>
-                <img src="../public/logo.svg" alt="seal"/>
-                <h1 className={styles.logo}>Seally</h1>
+                <Link to="/" className={styles.link}>
+                    {isScrolled ? <img src="/logo-black.svg" alt="seal" /> : <img src="/logo.svg" alt="seal" />}
+                    <h1 className={styles.logo}>Seally</h1>
+                </Link>
             </div>
             <nav>
-                <Link to='/' className={styles.link}>Home</Link>
-                <Link to='/shop' className={styles.link}>Shop</Link>
+                <Link to="/" className={styles.link}>Home</Link>
+                <Link to="/shop" className={styles.link}>Shop</Link>
             </nav>
         </header>
-    )
-}
+    );
+};
 
 export default Header;

@@ -1,0 +1,11 @@
+.productsGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 100px;
+}
+
+.loading{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}

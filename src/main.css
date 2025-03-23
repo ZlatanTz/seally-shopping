@@ -2,10 +2,23 @@
 
 :root{
     --primary-blue: #3f69bd;
+    --header-height: 75px;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
 *{
     margin: 0;
     box-sizing: border-box;
     font-family: 'Rubik', 'Arial';
+}
+
+
+body{
+    height: 120vh;
+}
+
+main{
+    margin-top: var(--header-height);
 }
