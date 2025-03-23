@@ -4,7 +4,7 @@ import styles from "../styles/Header.module.css";
 
 import { useState, useEffect } from "react";
 
-const Header = () => {
+const Header = ({cartAmount}) => {
     const [isScrolled, setIsScrolled] = useState(false)
 
     useEffect(() => {
@@ -26,6 +26,10 @@ const Header = () => {
             <nav>
                 <Link to="/" className={styles.link}>Home</Link>
                 <Link to="/shop" className={styles.link}>Shop</Link>
+                <p className={styles.cart}>
+                    Cart
+                    <p className={styles.cartAmount}>{cartAmount}</p>
+                </p>
             </nav>
         </header>
     );

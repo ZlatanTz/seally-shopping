@@ -1,0 +1,52 @@
+.heroContainer img {
+    height: 650px;
+    z-index: 0;
+
+}
+
+.heroContainer {
+    display: flex;
+}
+
+
+.sideContainer {
+    align-self: flex-end;
+    z-index: 10;
+    margin-left: -100px;
+    margin-bottom: 30px;
+}
+
+.introFirst{
+    font-size: 5rem;
+}
+
+
+.introSecond {
+    font-size: 8rem;
+}
+
+.sideContainer button{
+    float: right;
+    cursor: pointer;
+    height: 50px;
+    width: 200px;
+    background-color: white;
+    color: black;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: 1px solid grey;
+    font-weight: 300;
+    transition: all 0.3s ease-in-out;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.sideContainer button:hover{
+    background-color: black;
+    .link {
+        color: white;
+    }
+}
