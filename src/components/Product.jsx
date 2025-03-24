@@ -1,16 +1,13 @@
 import { useState} from "react";
 import styles from "../styles/Product.module.css"; 
 
-const Product = ({id, name, price, img, onAmountChange}) => {
+const Product = ({id, name, price, img, addToCart}) => {
    const [selectedAmount, setSelectedAmount] = useState(1) 
 
     const handleChange = (e) => {
         const data = parseInt(e.target.value)
         setSelectedAmount(data)
         
-    }
-    const handleClick = () => {
-        onAmountChange((prev) => prev + selectedAmount)
     }
     
     return (
@@ -28,7 +25,7 @@ const Product = ({id, name, price, img, onAmountChange}) => {
                         )
                     })}   
                 </select>
-                <button onClick={handleClick}>Add to cart</button>
+                <button onClick={() => {addToCart({id, title: name, price, img, selectedAmount})}}>Add to cart</button>
             </div>
         </div>
     </div>

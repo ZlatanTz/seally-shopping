@@ -1,16 +1,18 @@
 import '../styles/Shop.css'
 import Header from "../components/Header";
 import Products from '../components/Products'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const Shop = () => {
-    const [cartAmount, setCartAmount] = useState(0) 
-
+    const [cartItems, setCartItems] = useState([]) 
+    useEffect(() => {
+        console.log(cartItems)
+    },[cartItems])
 
     return (
         <>
-        <Header cartAmount={cartAmount}/>
+        <Header cartAmount={cartItems.length}/>
         <main> 
-           <Products setCartAmount={setCartAmount}/>
+           <Products setCartItems={setCartItems}/>
         </main>
         </>
     )

@@ -6,7 +6,7 @@ ring.register()
 
 import Product from "./Product";
 
-const Products = ({setCartAmount}) => {
+const Products = ({setCartItems}) => {
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
     const [productsData, setProductsData] = useState(null)
@@ -46,12 +46,13 @@ const Products = ({setCartAmount}) => {
         return (<div>Error occured: {error.message} </div>)
     }
 
-    const handleAmountChange = (amount) => {
-        setCartAmount(amount)
+    const handleAddToCart = (item) => {
+        setCartItems(prev => [...prev, item])
     }
+
     return (
     <div className={styles.productsGrid}>
-        {productsData.map(product => <Product key={product.id} name={product.title} img={product.images[0]} price={product.price} onAmountChange={handleAmountChange} />)}
+        {productsData.map(product => <Product key={product.id}  id={product.id} name={product.title} img={product.images[0]} price={product.price} addToCart={handleAddToCart} />)}
     </div>)
     
         
