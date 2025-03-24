@@ -14,7 +14,7 @@ const Products = ({setCartAmount}) => {
     useEffect(() => {
         const handleData = async () => {
             try{
-                const response = await fetch('https://api.escuelajs.co/api/v1/products')
+                const response = await fetch('https://api.escuelajs.co/api/v1/products?limit=50&offset=0')
                 if(!response.ok){
                     throw new Error('invalid request')
                 }

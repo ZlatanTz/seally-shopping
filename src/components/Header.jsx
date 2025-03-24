@@ -28,7 +28,7 @@ const Header = ({cartAmount}) => {
                 <Link to="/shop" className={styles.link}>Shop</Link>
                 <p className={styles.cart}>
                     Cart
-                    <p className={styles.cartAmount}>{cartAmount}</p>
+                    {cartAmount > 0 ? <p className={styles.cartAmount}>{cartAmount}</p> : null}
                 </p>
             </nav>
         </header>
