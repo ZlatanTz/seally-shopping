@@ -47,8 +47,23 @@ const Products = ({setCartItems}) => {
     }
 
     const handleAddToCart = (item) => {
-        setCartItems(prev => [...prev, item])
-    }
+        setCartItems(prev => {
+            const existingItem = prev.find(cartItem => cartItem.id === item.id);
+            
+            if (existingItem) {
+               
+                return prev.map(cartItem => 
+                    cartItem.id === item.id
+                        ? { ...cartItem, selectedAmount: cartItem.selectedAmount + item.selectedAmount }
+                        : cartItem
+                );
+            } else {
+                
+                return [...prev, item];
+            }
+        });
+    };
+    
 
     return (
     <div className={styles.productsGrid}>
